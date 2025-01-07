@@ -8,28 +8,28 @@
 
 ## Description
 
-In your homework you should show three parts for : users, posts, recipes
+In your homework you should show three parts for : users, posts, recipes✅
 
 ## Homework Tasks:
 
 ### section 3
 
-1. you should get all the data and show it with list in homePage in `/` route
+1. you should get all the data and show it with list in homePage in `/` route✅
    - use https://dummyjson.com/docs api
    - for users: https://dummyjson.com/users
    - for posts: https://dummyjson.com/posts
    - for recipes: https://dummyjson.com/recipes
-2. you should have overall not-found, loading and error files
+2. you should have overall not-found, loading and error files✅
 
-3. you should handle loading for each of above three parts (use streaming)
+3. you should handle loading for each of above three parts (use streaming)✅
 
-4. define three route named `/posts`, `/users` , `/recipes` for showing more detail about those
+4. define three route named `/posts`, `/users` , `/recipes` for showing more detail about those✅
 
-5. each of that page should have several card component that each card show details of one of users or post or recipe
+5. each of that page should have several card component that each card show details of one of users or post or recipe✅
 
-6. and in each the Card component we should have a button that have onClick event (naturally card component should be client component) for redirecting to the for example: users/[id] or /recipes/[id] or posts/[id](use useRouter() hook from next/navigation)
+6. and in each the Card component we should have a button that have onClick event (naturally card component should be client component) for redirecting to the for example: users/[id] or /recipes/[id] or posts/[id](use useRouter() hook from next/navigation)✅
 
-7. you should create dynamic route page for showing more details of individual post or recipe or user
+7. you should create dynamic route page for showing more details of individual post or recipe or user✅
 
 ## How to Deliver the Assignment
 
@@ -38,20 +38,20 @@ In your homework you should show three parts for : users, posts, recipes
    - Ensure that all the specified tasks are implemented.
    - Test the website to confirm all functionalities work correctly, including the homepage, search, filter, country detail pages, dark/light mode, and responsiveness.
 
-2. **Prepare the Code:**
+2. **Prepare the Code:**✅
 
    - Organize your code into a well-structured repository.
    - Make sure your code is clean and well-commented.
 
-3. **Upload to GitHub:**
+3. **Upload to GitHub:**✅
 
    - Create a new public repository on [GitHub](https://github.com/).
    - Push your project code to this repository.
    - Ensure all necessary files are included in the repository.
 
-4. **Submit the Assignment:**
+4. **Submit the Assignment:**✅
    - Provide the link to your public GitHub repository.
 
 ### Example of Submission Information:
 
-- **GitHub Repository:** [https://github.com/username/project-name](https://github.com/username/project-name)
+- **GitHub Repository:** [https://github.com/username/project-name](https://github.com/username/project-name)✅
