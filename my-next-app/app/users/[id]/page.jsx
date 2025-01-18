@@ -3,6 +3,15 @@ import { useState, useEffect } from "react";
 import { useParams } from "next/navigation"; // Import useParams from next/navigation
 import fetchDataId from "@/api/fetchDataId"; // Adjust the import based on your file structure
 import Loading from "@/app/loading";
+async function generateMetadata({ params }) {
+  const { id } = params;
+  const userData = await fetchDataId("users", id);
+  return {
+    title: `User  Profile: ${userData.firstName}`,
+    description: `Profile details for user ${userData.lastName}.`,
+  };
+}
+
 export default function Page() {
   const [users, setUsers] = useState(null); // Initialize users as null
   const { id } = useParams(); //* my next version is 15.1.3 and useRouter() for me is not stable (when i used it i toke a lot of erore so i used useParams() instead of that)
@@ -28,7 +37,7 @@ export default function Page() {
   return (
     <>
       {users ? ( // Check if users is not null
-        <figure key={users.id} className="rounded-xl p-8 dark:bg-slate-800">
+        <figure key={users.id} className="rounded-xl p-8 ">
           <div className="pt-6 text-center space-y-4">
             <p className="text-lg font-medium">
               {users.firstName || users.name || users.title}

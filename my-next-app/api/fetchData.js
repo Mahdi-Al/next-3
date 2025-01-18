@@ -6,7 +6,7 @@ async function fetchData(endPoint) {
   if (!res.ok) {
     return notFound();
   } else if (!res) {
-    throw new Error("The data dat you want doesn't exist");
+    throw new Error("The data that you want doesn't exist");
   }
   const products = await res.json();
 

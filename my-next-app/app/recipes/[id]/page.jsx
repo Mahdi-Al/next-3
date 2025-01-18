@@ -3,6 +3,16 @@ import { useState, useEffect } from "react";
 import { useParams } from "next/navigation"; // Import useParams from next/navigation
 import fetchDataId from "@/api/fetchDataId"; // Adjust the import based on your file structure
 import Loading from "@/app/loading";
+
+import Image from "next/image";
+async function generateMetadata({ params }) {
+  const { id } = params;
+  const recipesData = await fetchDataId("recipes", id);
+  return {
+    title: `recipe  Profile: ${recipesData.name}`,
+    description: `Profile details for recipe ${recipesData.lastName}.`,
+  };
+}
 export default function Page() {
   const [recipes, setRecipes] = useState(null); // Initialize recipes as null
   const { id } = useParams(); //* my next version is 15.1.3 and useRouter() for me is not stable (when i used it i toke a lot of erore so i used useParams() instead of that)
@@ -28,7 +38,11 @@ export default function Page() {
   return (
     <>
       {recipes ? ( // Check if recipes is not null
-        <figure key={recipes.id} className="rounded-xl p-8 dark:bg-slate-800">
+        <figure key={recipes.id} className="rounded-xl p-8 ">
+          <Image src={recipes.image} width={100} height={100}></Image> //!have
+          // the below errore when I want to use Image
+          {/* * ! Error: Invalid src prop (https://cdn.dummyjson.com/recipe-images/5.webp) on `next/image`, hostname "cdn.dummyjson.com" is not configured under images in your `next.config.js`
+See more info: https://nextjs.org/docs/messages/next-image-unconfigured-host */}
           <div className="pt-6 text-center space-y-4">
             <p className="text-lg font-medium">
               {recipes.firstName || recipes.name || recipes.title}

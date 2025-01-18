@@ -3,6 +3,14 @@ import { useState, useEffect } from "react";
 import { useParams } from "next/navigation"; // Import useParams from next/navigation
 import fetchDataId from "@/api/fetchDataId"; // Adjust the import based on your file structure
 import Loading from "@/app/loading";
+async function generateMetadata({ params }) {
+  const { id } = params;
+  const postsData = await fetchDataId("posts", id);
+  return {
+    title: `post  Profile: ${postsData.name}`,
+    description: `Profile details for post ${postsData.lastName}.`,
+  };
+}
 export default function Page() {
   const [post, setPost] = useState(null); // Initialize post as null
   const { id } = useParams(); //* my next version is 15.1.3 and useRouter() for me is not stable (when i used it i toke a lot of erore so i used useParams() instead of that)
@@ -28,7 +36,7 @@ export default function Page() {
   return (
     <>
       {post ? ( // Check if post is not null
-        <figure key={post.id} className="rounded-xl p-8 dark:bg-slate-800">
+        <figure key={post.id} className="rounded-xl p-8 ">
           <div className="pt-6 text-center space-y-4">
             <p className="text-lg font-medium">
               {post.firstName || post.name || post.title}
