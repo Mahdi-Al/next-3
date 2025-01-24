@@ -3,7 +3,7 @@ import fetchData from "@/api/fetchData";
 import dynamic from "next/dynamic";
 import Loading from "./loading";
 import Header from "@/Components/Header";
-import Gallery from "@/Components/Gallery";
+// import Gallery from "@/app/Gallery/page";
 const DynamicComponent = dynamic(() => import("@/Components/Header"), {
   loading: () => <Loading />,
 });
