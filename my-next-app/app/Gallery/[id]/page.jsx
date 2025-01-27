@@ -1,3 +1,7 @@
+// app/Gallery/[id]/page.jsx
+"use client";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
 import bridge from "@/public/Image/0_ihTZPO4iffJ8n69_.jpg";
 import thunder from "@/public/Image/10df3b1780a0323bba7ac1879a409201.jpg";
 import jungle from "@/public/Image/1000_F_540584039_Yj2m4uUkn2h8XoRrfV3fiosFgpfRQmEu.jpg";
@@ -14,21 +18,28 @@ const data = [
   { id: 6, url: snowy },
 ];
 
-export default async function page({ params }) {
-  //   console.log(data);
+export default function GalleryItem() {
+  const router = useRouter();
+  const { query } = router;
 
-  // Await the params to access its properties
-  const { id } = await params;
-  const photo = data.find((p) => p.id === parseInt(id));
-  console.log("____________");
-  console.log(id);
-  console.log("____________");
-  console.log(photo);
+  // Check if query is defined and has an id
+  if (!query.id) {
+    return <p>Loading...</p>; // Show a loading state while waiting for the query
+  }
+
+  const id = parseInt(query.id); // Convert the id to a number
+
+  // Find the image based on the ID
+  const photo = data.find((item) => item.id === id);
+
+  if (!photo) {
+    return <p>Image not found</p>; // Handle case where image is not found
+  }
 
   return (
     <>
-      {/* <h1>Hello</h1> */}
-      <img src={photo.url} alt="" />
+      <h1 className="text-center">Gallery Item</h1>
+      <Image src={photo.url} alt="" width={600} height={400} />
     </>
   );
 }

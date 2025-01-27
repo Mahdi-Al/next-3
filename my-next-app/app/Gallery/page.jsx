@@ -1,6 +1,6 @@
-// "use client";
-// import Image from "next/image/0_ihTZPO4iffJ8n69_";
-// import Link from "next/link";
+"use client";
+import Image from "next/image";
+import Link from "next/link";
 import bridge from "@/public/Image/0_ihTZPO4iffJ8n69_.jpg";
 import thunder from "@/public/Image/10df3b1780a0323bba7ac1879a409201.jpg";
 import jungle from "@/public/Image/1000_F_540584039_Yj2m4uUkn2h8XoRrfV3fiosFgpfRQmEu.jpg";
